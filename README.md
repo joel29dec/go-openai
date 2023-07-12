@@ -1,19 +1,22 @@
 # Go OpenAI
-[![Go Reference](https://pkg.go.dev/badge/github.com/sashabaranov/go-openai.svg)](https://pkg.go.dev/github.com/sashabaranov/go-openai)
-[![Go Report Card](https://goreportcard.com/badge/github.com/sashabaranov/go-openai)](https://goreportcard.com/report/github.com/sashabaranov/go-openai)
+
+[![Go Reference](https://pkg.go.dev/badge/github.com/joel29dec/go-openai.svg)](https://pkg.go.dev/github.com/joel29dec/go-openai)
+[![Go Report Card](https://goreportcard.com/badge/github.com/joel29dec/go-openai)](https://goreportcard.com/report/github.com/joel29dec/go-openai)
 [![codecov](https://codecov.io/gh/sashabaranov/go-openai/branch/master/graph/badge.svg?token=bCbIfHLIsW)](https://codecov.io/gh/sashabaranov/go-openai)
 
-This library provides unofficial Go clients for [OpenAI API](https://platform.openai.com/). We support: 
+This library provides unofficial Go clients for [OpenAI API](https://platform.openai.com/). We support:
 
-* ChatGPT
-* GPT-3, GPT-4
-* DALL·E 2
-* Whisper
+- ChatGPT
+- GPT-3, GPT-4
+- DALL·E 2
+- Whisper
 
 ### Installation:
+
 ```
-go get github.com/sashabaranov/go-openai
+go get github.com/joel29dec/go-openai
 ```
+
 Currently, go-openai requires Go version 1.18 or greater.
 
 ### ChatGPT example usage:
@@ -24,7 +27,7 @@ package main
 import (
 	"context"
 	"fmt"
-	openai "github.com/sashabaranov/go-openai"
+	openai "github.com/joel29dec/go-openai"
 )
 
 func main() {
@@ -76,7 +79,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	openai "github.com/sashabaranov/go-openai"
+	openai "github.com/joel29dec/go-openai"
 )
 
 func main() {
@@ -118,6 +121,7 @@ func main() {
 	}
 }
 ```
+
 </details>
 
 <details>
@@ -129,7 +133,7 @@ package main
 import (
 	"context"
 	"fmt"
-	openai "github.com/sashabaranov/go-openai"
+	openai "github.com/joel29dec/go-openai"
 )
 
 func main() {
@@ -149,6 +153,7 @@ func main() {
 	fmt.Println(resp.Choices[0].Text)
 }
 ```
+
 </details>
 
 <details>
@@ -162,7 +167,7 @@ import (
 	"context"
 	"fmt"
 	"io"
-	openai "github.com/sashabaranov/go-openai"
+	openai "github.com/joel29dec/go-openai"
 )
 
 func main() {
@@ -199,6 +204,7 @@ func main() {
 	}
 }
 ```
+
 </details>
 
 <details>
@@ -211,7 +217,7 @@ import (
 	"context"
 	"fmt"
 
-	openai "github.com/sashabaranov/go-openai"
+	openai "github.com/joel29dec/go-openai"
 )
 
 func main() {
@@ -230,6 +236,7 @@ func main() {
 	fmt.Println(resp.Text)
 }
 ```
+
 </details>
 
 <details>
@@ -243,7 +250,7 @@ import (
 	"fmt"
 	"os"
 
-	openai "github.com/sashabaranov/go-openai"
+	openai "github.com/joel29dec/go-openai"
 )
 
 func main() {
@@ -271,6 +278,7 @@ func main() {
 	}
 }
 ```
+
 </details>
 
 <details>
@@ -284,7 +292,7 @@ import (
 	"context"
 	"encoding/base64"
 	"fmt"
-	openai "github.com/sashabaranov/go-openai"
+	openai "github.com/joel29dec/go-openai"
 	"image/png"
 	"os"
 )
@@ -351,6 +359,7 @@ func main() {
 }
 
 ```
+
 </details>
 
 <details>
@@ -372,7 +381,8 @@ config.HTTPClient = &http.Client{
 c := openai.NewClientWithConfig(config)
 ```
 
-See also: https://pkg.go.dev/github.com/sashabaranov/go-openai#ClientConfig
+See also: https://pkg.go.dev/github.com/joel29dec/go-openai#ClientConfig
+
 </details>
 
 <details>
@@ -388,7 +398,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/sashabaranov/go-openai"
+	"github.com/joel29dec/go-openai"
 )
 
 func main() {
@@ -430,6 +440,7 @@ func main() {
 	}
 }
 ```
+
 </details>
 
 <details>
@@ -442,7 +453,7 @@ import (
 	"context"
 	"fmt"
 
-	openai "github.com/sashabaranov/go-openai"
+	openai "github.com/joel29dec/go-openai"
 )
 
 func main() {
@@ -477,6 +488,7 @@ func main() {
 }
 
 ```
+
 </details>
 
 <details>
@@ -489,7 +501,7 @@ import (
 	"context"
 	"fmt"
 
-	openai "github.com/sashabaranov/go-openai"
+	openai "github.com/joel29dec/go-openai"
 )
 
 func main() {
@@ -525,6 +537,7 @@ func main() {
 	fmt.Println(vectors[:10], "...", vectors[len(vectors)-10:])
 }
 ```
+
 </details>
 
 <details>
@@ -538,26 +551,21 @@ The developer documents give this JSON schema definition as an example:
 
 ```json
 {
-  "name":"get_current_weather",
-  "description":"Get the current weather in a given location",
-  "parameters":{
-    "type":"object",
-    "properties":{
-        "location":{
-          "type":"string",
-          "description":"The city and state, e.g. San Francisco, CA"
-        },
-        "unit":{
-          "type":"string",
-          "enum":[
-              "celsius",
-              "fahrenheit"
-          ]
-        }
+  "name": "get_current_weather",
+  "description": "Get the current weather in a given location",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "location": {
+        "type": "string",
+        "description": "The city and state, e.g. San Francisco, CA"
+      },
+      "unit": {
+        "type": "string",
+        "enum": ["celsius", "fahrenheit"]
+      }
     },
-    "required":[
-        "location"
-    ]
+    "required": ["location"]
   }
 }
 ```
@@ -585,6 +593,7 @@ FunctionDefinition{
 ```
 
 The `Parameters` field of a `FunctionDefinition` can accept either of the above styles, or even a nested struct from another library (as long as it can be marshalled into JSON).
+
 </details>
 
 <details>
@@ -593,6 +602,7 @@ The `Parameters` field of a `FunctionDefinition` can accept either of the above 
 Open-AI maintains clear documentation on how to [handle API errors](https://platform.openai.com/docs/guides/error-codes/api-errors)
 
 example:
+
 ```
 e := &openai.APIError{}
 if errors.As(err, &e) {
@@ -600,7 +610,7 @@ if errors.As(err, &e) {
     case 401:
       // invalid auth or key (do not retry)
     case 429:
-      // rate limiting or engine overload (wait and retry) 
+      // rate limiting or engine overload (wait and retry)
     case 500:
       // openai server error (retry)
     default:
@@ -609,18 +619,20 @@ if errors.As(err, &e) {
 }
 
 ```
+
 </details>
 
 See the `examples/` folder for more.
 
 ### Integration tests:
 
-Integration tests are requested against the production version of the OpenAI API. These tests will verify that the library is properly coded against the actual behavior of the API, and will  fail upon any incompatible change in the API.
+Integration tests are requested against the production version of the OpenAI API. These tests will verify that the library is properly coded against the actual behavior of the API, and will fail upon any incompatible change in the API.
 
 **Notes:**
 These tests send real network traffic to the OpenAI API and may reach rate limits. Temporary network problems may also cause the test to fail.
 
 **Run tests using:**
+
 ```
 OPENAI_TOKEN=XXX go test -v -tags=integration ./api_integration_test.go
 ```
@@ -629,7 +641,8 @@ If the `OPENAI_TOKEN` environment variable is not available, integration tests w
 
 ## Thank you
 
-We want to take a moment to express our deepest gratitude to the [contributors](https://github.com/sashabaranov/go-openai/graphs/contributors) and sponsors of this project:
+We want to take a moment to express our deepest gratitude to the [contributors](https://github.com/joel29dec/go-openai/graphs/contributors) and sponsors of this project:
+
 - [Carson Kahn](https://carsonkahn.com) of [Spindle AI](https://spindleai.com)
 
 To all of you: thank you. You've helped us achieve more than we ever imagined possible. Can't wait to see where we go next, together!
