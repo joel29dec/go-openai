@@ -14,12 +14,12 @@ func TestOpenAIFullURL(t *testing.T) {
 		{
 			"ChatCompletionsURL",
 			"/chat/completions",
-			"https://api.openai.com/v1/chat/completions",
+			"http://localhost:4891/v1/chat/completions",
 		},
 		{
 			"CompletionsURL",
 			"/completions",
-			"https://api.openai.com/v1/completions",
+			"http://localhost:4891/v1/completions",
 		},
 	}
 
